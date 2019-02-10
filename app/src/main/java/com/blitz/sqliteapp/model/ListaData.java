@@ -1,5 +1,10 @@
 package com.blitz.sqliteapp.model;
 
+
+import android.content.ContentValues;
+
+import com.blitz.sqliteapp.SQLConstants;
+
 public class ListaData {
 
     private String id;
@@ -9,6 +14,10 @@ public class ListaData {
     private String caracteristicas;
     private String image;
     private int favoritos;
+
+    public ListaData(){
+
+    }
 
     public ListaData(String id, String nombre, int personas, String descripcion, String caracteristicas, String image, int favoritos) {
         this.id = id;
@@ -74,5 +83,17 @@ public class ListaData {
 
     public void setFavoritos(int favoritos) {
         this.favoritos = favoritos;
+    }
+
+    public ContentValues toValues(){
+        ContentValues contentValues = new ContentValues(7);
+        contentValues.put(SQLConstants.COLUMN_ID, id);
+        contentValues.put(SQLConstants.COLUMN_NOMBRE, nombre);
+        contentValues.put(SQLConstants.COLUMN_PERSONAS, personas);
+        contentValues.put(SQLConstants.COLUMN_DESCRIPCION, descripcion);
+        contentValues.put(SQLConstants.COLUMN_CARACTERISTICAS, caracteristicas);
+        contentValues.put(SQLConstants.COLUMN_IMAGEN, image);
+        contentValues.put(SQLConstants.COLUMN_FAV, favoritos);
+        return contentValues;
     }
 }

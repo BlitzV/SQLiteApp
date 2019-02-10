@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddDataActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sds"
+        android:layout_marginLeft="@dimen/sds"
+        android:layout_marginTop="@dimen/sds"
+        android:hint="Image URL"/>
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sds"
+        android:layout_marginLeft="@dimen/sds"
+        android:layout_marginTop="@dimen/sds"
+        android:hint="ID"/>
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sds"
+        android:layout_marginLeft="@dimen/sds"
+        android:layout_marginTop="@dimen/sds"
+        android:hint="Nombre"/>
+
+    <EditText
+        android:id="@+id/persona"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sds"
+        android:layout_marginLeft="@dimen/sds"
+        android:layout_marginTop="@dimen/sds"
+        android:hint="Persona"/>
+
+    <EditText
+        android:id="@+id/descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sds"
+        android:layout_marginLeft="@dimen/sds"
+        android:layout_marginTop="@dimen/sds"
+        android:hint="Caracteristicas"/>
+
+    <EditText
+        android:id="@+id/caracteristicas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sds"
+        android:layout_marginLeft="@dimen/sds"
+        android:layout_marginTop="@dimen/sds"
+        android:hint="Caracteristicas"/>
+
+
+    <EditText
+        android:id="@+id/favoritos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/sds"
+        android:layout_marginLeft="@dimen/sds"
+        android:layout_marginTop="@dimen/sds"
+        android:hint="Favorito"/>
+
+    <Button
+        android:id="@+id/agregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar"
+        android:layout_margin="@dimen/sds"
+        android:onClick="agregar"/>
+
+</LinearLayout>

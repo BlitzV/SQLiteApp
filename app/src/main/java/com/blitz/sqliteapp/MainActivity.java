@@ -8,7 +8,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.blitz.sqliteapp.Adapters.ListAdapter;
 import com.blitz.sqliteapp.model.ListaData;
@@ -103,5 +107,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         update();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.fav:
+                //Toast.makeText(this, "Favoritos", Toast.LENGTH_SHORT).show();
+                listAdapter = new ListAdapter(this, data.getFavs());
+                recyclerList.setAdapter(listAdapter);
+                break;
+            case R.id.personas:
+                //Toast.makeText(this, "personas", Toast.LENGTH_SHORT).show();
+                listAdapter = new ListAdapter(this, data.getPersonas(10));
+                recyclerList.setAdapter(listAdapter);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }

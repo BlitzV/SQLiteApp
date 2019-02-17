@@ -79,4 +79,44 @@ public class Data {
         sqLiteDatabase.delete(SQLConstants.TableList, SQLConstants.WHERE_CLAUSE_NOMBRE,whereArgs);
     }
 
+    public List<ListaData> getFavs(){
+        List<ListaData> list = new ArrayList<>();
+        String[] whereArgs = new String [] {String.valueOf(1)};
+        Cursor cursor = sqLiteDatabase.query(SQLConstants.TableList, SQLConstants.ALL_COLUMNS,SQLConstants.WHERE_CLAUSE_FAVS,
+                whereArgs, null, null, null);
+
+        while (cursor.moveToNext()){
+            ListaData lista = new ListaData();
+            lista.setId(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_ID)));
+            lista.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_NOMBRE)));
+            lista.setPersonas(cursor.getInt(cursor.getColumnIndex(SQLConstants.COLUMN_PERSONAS)));
+            lista.setDescripcion(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_DESCRIPCION)));
+            lista.setCaracteristicas(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_CARACTERISTICAS)));
+            lista.setImage(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_IMAGEN)));
+            lista.setFavoritos(cursor.getInt(cursor.getColumnIndex(SQLConstants.COLUMN_FAV)));
+            list.add(lista);
+        }
+        return list;
+    }
+
+    public List<ListaData> getPersonas(int p){
+        List<ListaData> list = new ArrayList<>();
+        String[] whereArgs = new String [] {String.valueOf(p)};
+        Cursor cursor = sqLiteDatabase.query(SQLConstants.TableList, SQLConstants.ALL_COLUMNS,SQLConstants.WHERE_CLAUSE_PERSONAS,
+                whereArgs, null, null, null);
+
+        while (cursor.moveToNext()){
+            ListaData lista = new ListaData();
+            lista.setId(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_ID)));
+            lista.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_NOMBRE)));
+            lista.setPersonas(cursor.getInt(cursor.getColumnIndex(SQLConstants.COLUMN_PERSONAS)));
+            lista.setDescripcion(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_DESCRIPCION)));
+            lista.setCaracteristicas(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_CARACTERISTICAS)));
+            lista.setImage(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_IMAGEN)));
+            lista.setFavoritos(cursor.getInt(cursor.getColumnIndex(SQLConstants.COLUMN_FAV)));
+            list.add(lista);
+        }
+        return list;
+    }
+
 }

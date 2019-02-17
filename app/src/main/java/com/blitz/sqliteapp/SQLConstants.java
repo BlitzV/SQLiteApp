@@ -24,6 +24,8 @@ public class SQLConstants {
             COLUMN_FAV + " INT" + ");";
 
     public static final String WHERE_CLAUSE_NOMBRE = "nombre=?";
+    public static final String WHERE_CLAUSE_FAVS = "fav=?";
+    public static final String WHERE_CLAUSE_PERSONAS = "personas=?";
 
     public static final String SQL_DELETE = "DROP TABLE " + TableList;
 

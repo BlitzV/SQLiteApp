@@ -38,6 +38,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         viewHolder.personas.setText("Personas "+ String.valueOf(list.get(i).getPersonas()));
         viewHolder.descripcion.setText(list.get(i).getDescripcion());
         viewHolder.caracteristicas.setText(list.get(i).getCaracteristicas());
+
+        if(list.get(i).getFavoritos() == 1){
+            viewHolder.star.setImageResource(R.drawable.twotone_star_black_24);
+        }else{
+            viewHolder.star.setImageResource(R.drawable.twotone_star_border_black_24);
+        }
     }
 
     @Override
@@ -48,6 +54,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         ImageView imageView;
+        ImageView star;
         TextView nombre, personas, descripcion, caracteristicas;
 
         public ViewHolder(@NonNull View itemView) {
@@ -59,6 +66,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             personas = (TextView) itemView.findViewById(R.id.personas);
             descripcion = (TextView) itemView.findViewById(R.id.descripcion);
             caracteristicas = (TextView) itemView.findViewById(R.id.caracteristicas);
+            star = (ImageView) itemView.findViewById(R.id.star);
         }
     }
 }
